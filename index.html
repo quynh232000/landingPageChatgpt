@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI - ChatGPT</title>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679243180/Vector_ht54xj.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="/src/css/root.css">
+    <link rel="stylesheet" href="/src/css/slider.css">
+    <link rel="stylesheet" href="/src/css/grid.css">
+    <link rel="stylesheet" href="/src/css/modal.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+    <link rel="stylesheet" href="/src/fonts/fontawesome-free-6.1.1/css/all.min.css">
+
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+   
+</head>
+<body>
+    <div id="root" class="root">
+      <div class="app ">
+        <!-- header -->
+          <header id="header" class="header  header-show">
+           <div class="header-wrapper grid wide">
+              <nav class="nav row sm-gutter col ">
+                <div class="header_menu menu-active header_menu-main"><i class="fa-solid fa-bars"></i></div>
+                <div class="header_menu header_menu-close"><i class="fa-solid fa-xmark"></i></div>
+                <div id="header-logo" class="nav-logo c-2">
+                  <a href="#home" >
+                    <svg data-v-069f367b="" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 32" class="a-icon--logo-text flex h-32" data-new="" aria-hidden="true" style="width: 158px; height: 42px;"><g data-v-069f367b="" fill="#00F0FF">
+                      <path d="m36.7 15.4c0 5.2 3.4 8.9 8 8.9s8-3.6 8-8.9-3.4-8.9-8-8.9-8 3.7-8 8.9zm13 0c0 3.7-2 6.2-4.9 6.2s-4.9-2.4-4.9-6.2 2-6.2 4.9-6.2 4.9 2.4 4.9 6.2z"></path>
+                      <path d="m61.4 24.3c3.5 0 5.5-3 5.5-6.6s-2-6.6-5.5-6.6c-1.6 0-2.8.6-3.6 1.6v-1.3h-2.9v16.9h2.9v-5.6c.8.9 2 1.6 3.6 1.6zm-3.7-6.9c0-2.4 1.3-3.7 3.1-3.7 2.1 0 3.2 1.6 3.2 4s-1.1 4-3.2 4c-1.8 0-3.1-1.3-3.1-3.6z">
+                      </path>
+                      <path d="m74.8 24.3c2.5 0 4.5-1.3 5.4-3.5l-2.5-.9c-.4 1.3-1.5 2-2.9 2-1.8 0-3.1-1.3-3.4-3.5h8.8v-1c0-3.5-1.9-6.2-5.6-6.2-3.5 0-6 2.9-6 6.6 0 3.8 2.6 6.5 6.2 6.5zm-.2-10.7c1.8 0 2.7 1.2 2.7 2.6h-5.8c.5-1.7 1.6-2.6 3.1-2.6z"></path>
+                      <path d="m82.4 24h2.9v-7.4c0-1.8 1.3-2.8 2.6-2.8 1.6 0 2.2 1.1 2.2 2.7v7.5h2.9v-8.3c0-2.7-1.6-4.5-4.2-4.5-1.6 0-2.8.7-3.5 1.6v-1.3h-2.9z"></path>
+                      <path d="m101.4 6.8-6.5 17.2h3l1.5-3.9h7.4l1.5 3.9h3.1l-6.5-17.2zm1.7 3.4 2.7 7.2h-5.4z"></path>
+                      <path d="m116.4 6.8h-3.1v17.2h3.1z">
+                      </path>
+                      <path class="a-icon--logo-text-logo" d="m29.7 13.1c.4-1.1.5-2.2.4-3.3s-.5-2.2-1-3.2c-.9-1.5-2.2-2.7-3.7-3.4-1.6-.7-3.3-.9-5-.5-.8-.8-1.7-1.5-2.7-2s-2.2-.7-3.3-.7c-1.7 0-3.4.5-4.8 1.5s-2.4 2.4-2.9 4c-1.2.3-2.2.8-3.2 1.4-.9.7-1.6 1.6-2.2 2.5-.9 1.5-1.2 3.2-1 4.9s.9 3.3 2 4.6c-.4 1.1-.5 2.2-.4 3.3s.5 2.2 1 3.2c.9 1.5 2.2 2.7 3.7 3.4 1.6.7 3.3.9 5 .5.8.8 1.7 1.5 2.7 2s2.2.7 3.3.7c1.7 0 3.4-.5 4.8-1.5s2.4-2.4 2.9-4c1.1-.2 2.2-.7 3.1-1.4s1.7-1.5 2.2-2.5c.9-1.5 1.2-3.2 1-4.9s-.8-3.3-1.9-4.6zm-12 16.8c-1.6 0-2.8-.5-3.9-1.4 0 0 .1-.1.2-.1l6.4-3.7c.2-.1.3-.2.4-.4s.1-.3.1-.5v-9l2.7 1.6v7.4c.1 3.5-2.7 6.1-5.9 6.1zm-12.9-5.5c-.7-1.2-1-2.6-.7-4 0 0 .1.1.2.1l6.4 3.7c.2.1.3.1.5.1s.4 0 .5-.1l7.8-4.5v3.1l-6.5 3.8c-1.4.8-3 1-4.5.6-1.6-.4-2.9-1.4-3.7-2.8zm-1.7-13.9c.7-1.2 1.8-2.1 3.1-2.6v.2 7.4c0 .2 0 .4.1.5.1.2.2.3.4.4l7.8 4.5-2.7 1.6-6.4-3.7c-1.4-.8-2.4-2.1-2.8-3.6s-.3-3.3.5-4.7zm22.1 5.1-7.8-4.5 2.7-1.6 6.4 3.7c1 .6 1.8 1.4 2.3 2.4s.8 2.1.7 3.3c-.1 1.1-.5 2.2-1.2 3.1s-1.6 1.6-2.7 2v-7.6c0-.2 0-.4-.1-.5 0 0-.1-.2-.3-.3zm2.7-4s-.1-.1-.2-.1l-6.4-3.7c-.2-.1-.3-.1-.5-.1s-.4 0-.5.1l-7.8 4.5v-3.1l6.5-3.8c1-.6 2.1-.8 3.3-.8 1.1 0 2.2.4 3.2 1.1.9.7 1.7 1.6 2.1 2.6s.5 2.2.3 3.3zm-16.8 5.6-2.7-1.6v-7.5c0-1.1.3-2.3.9-3.2.6-1 1.5-1.7 2.5-2.2s2.2-.7 3.3-.5c1.1.1 2.2.6 3.1 1.3 0 0-.1.1-.2.1l-6.4 3.7c-.2.1-.3.2-.4.4s-.1.3-.1.5zm1.4-3.2 3.5-2 3.5 2v4l-3.5 2-3.5-2z"></path></g>
+                    </svg>
+                  </a>
+                </div>
+                <ul class="nav-items c-8">
+                  <li  class="nav-item"><a href="#overview">GIỚI THIỆU</a></li>
+                  <li class="nav-item"><a href="#demo" >THỬ NGHIỆM</a></li>
+                  <li class="nav-item"><a  href="#features" >TÍNH NĂNG</a></li>
+                  <li class="nav-item"><a href="#price" > BẢNG GIÁ</a></li>
+                  <li  class="nav-item"><a href="#faq">FAQ</a></li>
+                </ul> 
+                <div class="nav-btn-body c-2 ">
+                  <button class="nav-btn">ĐẶT NGAY!</button>
+                </div>
+              </nav>
+           </div>
+           <!-- header list mobile header_m-active-->
+           <div class="header_m ">
+            <ul class="header_m-list">
+              <li  class="  header_m-item"><a href="#overview">GIỚI THIỆU</a></li>
+              <li class=" header_m-item"><a href="#demo" >THỬ NGHIỆM</a></li>
+              <li class=" header_m-item"><a  href="#features" >TÍNH NĂNG</a></li>
+              <li class=" header_m-item"><a href="#price" > BẢNG GIÁ</a></li>
+              <li  class=" header_m-item"><a href="#faq">FAQ</a></li>
+            </ul> 
+           </div>
+          </header>
+        <!-- body -->
+        <main class="main">
+          <!-- banner -->
+          <div class="banner grid wide">
+            <div class="banner-wrapper">
+              <div class="banner_1-body">
+                <div class="banner_1 row sm-gutter ">
+                  <h1 class="banner_1-title c-12">Chat GPT</h1>
+                  <h1 class="banner_1-text c-8 ">Một sản phẩm trí tuệ nhân tạo, thông minh nhất từ trước đến nay do con người tạo ra, nó có thể giúp chúng ta “làm được mọi thứ”, từ viết văn nội trợ, cho đến lập trình và còn nhiều tính năng thú vị khác...</h1>
+                </div>
+                <div class="banner_1 row sm-gutter">
+                  <div class="banner_slogen c-8 laptop">
+                    <h2>D Ễ&ensp; D À N G&ensp; S Ử&ensp; D Ụ N G&ensp;  -&ensp;  N H A N H&ensp; C HÓ N G</h2>
+                    <h2>  H I Ệ U&ensp; S U Ấ T C A O </h2>
+                  </div>
+                  <!-- mobile -->
+                  <marquee class="banner_slogen  c-8 mobile banner_slogen-m">
+                    <h2>D Ễ&ensp; D À N G&ensp; S Ử&ensp; D U N G&ensp;  -&ensp;  N H A N H&ensp; C H Ó N G &ensp;  H I Ệ U&ensp; S U Ấ T &ensp;C A O </h2>
+                    <h2></h2>
+                  </marquee>
+                </div>
+              </div>
+              <div class="banner_img-robot">
+                <img  src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679747970/Group_66_r3rn0n.svg"/>
+              </div>
+              <div class="banner-btn">
+                  ĐĂNG KÍ NGAY - <span>GIẢM NGAY 50%</span>
+              </div>
+              <div class="banner_img-list">
+                    <img href="" class="banner_img" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679477639/bannr_jddm55.svg">
+                    <!-- <img href="" class="banner_img" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/Group_14.png"> -->
+                    <!-- <img href="" class="banner_img" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/Group_47.png"> -->
+                    <!-- <img href="" class="banner_img" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/visa.png"> -->
+                    <!-- <img href="" class="banner_img banner_img-last" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679418702/banner30daysback_1_u5tmh7.svg"> -->
+              </div>
+              <div class="banner_list-device">   
+                <div class="banner_item">
+                  <div class="banner_item-title">Full Compare with</div>
+                  <div>
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679219642/applelogo_srwutv.svg"/>
+                    <p>macOS</p>
+                  </div>
+                </div>
+                <div class="banner_item banner_item-color1">
+                  <div class="banner_item-title">Full Compare with</div>
+                  <div>
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679215706/windows_zumldw.svg"/>
+                    <p>Windows</p>
+                  </div>
+                </div>
+                <div class="banner_item banner_item-color2">
+                  <div class="banner_item-title">Full Compare with</div>
+                  <div>
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679219623/android_nujot1.svg"/>
+                    <p>Androids</p>
+                  </div>
+                </div>
+                <div class="banner_item banner_item-color4">
+                  <div class="banner_item-title">Full Compare with</div>
+                  <div>
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679219642/applelogo_srwutv.svg"/>
+                    <p>iOS</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+         <!-- price -->
+          </div>
+          <!-- overview -->
+          <div id="overview" class="overview">
+            <div class="overview_wrapper grid wide">
+              <div class="overview-background"></div>
+              <div class="overview_body c-10">
+                <div class="overview-title">GIỚI THIỆU</div>
+                <div class="overview-more-info">
+                  ChatGPT là một chatbot trí tuệ nhân tạo được phát triển bởi OpenAI ( một công ty công nghệ lớn ở Silicon Valley ), dựa trên mô hình GPT 3.5, nó được thiết kế để hiểu và tạo ra ngôn ngữ giao tiếp, phản hồi một cách tự nhiên với con người.
+                </div>
+                <div class="overview-more-info">ChatGPT được đào tạo bởi kho dữ liệu khổng lồ từ nhiều nguồn khác nhau từ trước đến nay, bao gồm sách, website và những thứ khác được tạo ra bởi con người có trên Internet. Trí thông minh nhân tạo này có thể hiểu sâu ngôn ngữ như ngữ pháp, các cú pháp trong lập trình, và cho phép trả lời bằng những câu trả lời thực sự chất lượng như thể bạn đang giao tiếp với người.</div>
+                <div class="overview-more-info">Sinh ra với mục đích là chatbot nên nó được sử dụng như một chatbot để phục vụ cho các mục đích như tích hợp vào các Applications, bao gồm các dịch vụ hỗ trợ khách hàng, trợ lí riêng của bạn, hay tích hợp lên website của bạn giúp trả lời thông minh hơn và tiết kiệm thời gian hơn cũng như chi phí.</div>
+                <div class="overview-more-info">ChatGPT cũng có thể trở nên thông minh hơn nhờ vào việc học hỏi không ngừng đến từ những thông tin liên tục được chính người dùng dạy nó. </div>
+
+              </div>
+            </div>
+            
+            <img class="overview-img" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679217372/robot2_ybswbd.png"/>
+          </div>
+          <!-- demo -->
+          <div id="demo" class="demo">
+            <div class="demo_wrapper grid wide">
+                <div class="demo_body c-12">
+                  <div class="demo-title">Thử nghiệm</div>
+                  <!-- silder -->
+                  <div class="demo_ex">
+                    <!-- demo list slider  -->
+                    <div class="demo_image-slider">
+                      <!-- 1 -->
+                      <div class="demo_image-item">
+                        <div class="demo_image">
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679284827/programming-background-with-person-working-with-codes-computer_1_kllcq1.png"
+                            alt="fix bug"
+                          />
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591818/Group_56_kw86mg.svg"
+                            alt="fix bug"
+                          />
+                        </div>
+                        <h3 class="demo_image-title">Giúp lập trình viên fix bug</h3>
+                      </div>
+                      <!-- 2 -->
+                      <div class="demo_image-item">
+                        <div class="demo_image">
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679294780/Robots-Square-1080x675_1_opzxal.png"
+                            alt="review"
+                          />
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679592225/Group_57_1_po24za.svg"
+                            alt="review"
+                          />
+                        </div>
+                        <h3 class="demo_image-title">Nhờ ChatGPT viết bài Review</h3>
+                      </div>
+                      <!-- 3 -->
+                      <div class="demo_image-item">
+                        <div class="demo_image">
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591819/Group_63_wdu11h.svg"
+                            alt="noicho"
+                          />
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679294780/robotiscooking_vs3vk3.png"
+                            alt="noicho"
+                          />
+                        </div>
+                        <h3 class="demo_image-title">Hỗ trợ công việc nội trợ</h3>
+                      </div>
+                      <!-- 4 -->
+                      <div class="demo_image-item">
+                        <div class="demo_image">
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591321/image_1_1_qvezon.png"
+                            alt="crush"
+                          />
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591321/Group_64_fnxunh.svg"
+                            alt="crush"
+                          />
+                        </div>
+                        <h3 class="demo_image-title">Dạy bạn cách tán đổ crush</h3>
+                      </div>
+                      <!-- 5 -->
+                      <div class="demo_image-item">
+                        <div class="demo_image">
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591321/image_2_1_vuyew0.png"
+                            alt="funny"
+                          />
+                          <img
+                            src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679591320/Group_65_rhtdxq.svg"
+                            alt="funny"
+                          />
+                        </div>
+                        <h3 class="demo_image-title">Đưa cho bạn những câu nói vui nhộn</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- video -->
+                  <div class="demo_video" >
+                    <iframe class="demo_video-iframe" src="https://www.youtube.com/embed/axlOkgjXAP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <!-- btn buy -->
+                  <div class="demo_buy">
+                    <div class="demo_buy-wrapper">
+                      <div class="nav-btn-body btn-demo-mobile">
+                        <button id="demo-btn-buy" class="nav-btn nav-btn-custom demo-btn">ĐĂNG KÍ NGAY!</button>
+                      </div>
+                      <div class="demo_buy-text">để trải nghiệm thực tế.</div>
+                    </div>
+                  </div>
+                  <!-- test -->
+                  <div class="demo_test ">
+                    <div class="test-input">
+                      <input type="text" class="test_input" placeholder="Aa.."></input>
+                      <div class="test_btn"><img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="test-btn-img" /></div>
+                    </div>
+                    <div class="test-body">
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- tinh mang -->
+          <div id="features" class="feature">
+            <div class="feature_wrapper grid wide">
+              <div class="feature_body row sm-gutter c-10">
+                  <div class="feature-title">Tính năng...</div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">Xử lý ngôn ngữ tự nhiên (nlp)</div>
+                      <div class="feature-item-text">
+                        ChatGPT được trang bị các kỹ thuật NLP tiên tiến cho phép nó hiểu và diễn giải ngôn ngữ của con người theo cách phù hợp với ngữ cảnh.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">phân tích cảm xúc</div>
+                      <div class="feature-item-text">
+                        ChatGPT có thể phân tích tình cảm đằng sau các câu nói của người dùng, cho phép ChatGPT đưa ra các phản hồi thích hợp phù hợp với trạng thái cảm xúc của người dùng.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">cơ sở kiến thức</div>
+                      <div class="feature-item-text">
+                        ChatGPT có quyền truy cập vào lượng thông tin khổng lồ và có thể truy xuất dữ liệu từ nhiều nguồn khác nhau để cung cấp phản hồi chính xác và đáng tin cậy cho các truy vấn của người dùng.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">học máy (machine learning)</div>
+                      <div class="feature-item-text">
+                        ChatGPT dựa trên các thuật toán học máy cho phép ChatGPT liên tục học hỏi và cải thiện phản hồi dựa trên các tương tác của người dùng.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">Cá nhân hóa</div>
+                      <div class="feature-item-text">
+                        ChatGPT có thể cá nhân hóa phản hồi của nó cho từng người dùng dựa trên các tương tác và tùy chọn trước đó của họ.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679251424/Polygon_1_e3qfaf.svg" class="feature-item-triangle" />
+                    <div class="feature-item-body">
+                      <div class="feature-item-title">Đa ngôn ngữ</div>
+                      <div class="feature-item-text">
+                        ChatGPT có thể giao tiếp bằng nhiều ngôn ngữ, cho phép ChatGPT tương tác với người dùng từ các nơi khác nhau trên thế giới.
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- price -->
+          <div id="price" class="price">
+            <div class="price_wrapper grid">
+              <div class="price_body row sm-gutter c-10">
+                <div class="price-title">BẢNG GIÁ THAM KHẢO</div>
+                 <div class="price_list">
+                    <div class="price_item  c-4">
+                      <div class="price_item-title">GÓI CƠ BẢN</div>
+                      <div class="price_item-type">DÙNG THỬ MIỄN PHÍ</div>
+                      <div class="price_item-info">
+                          <p>1</p>
+                          <span>NGƯỜI DÙNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>GIỚI HẠN</p>
+                        <span>BĂNG THÔNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>4/7</p>
+                        <span>HỖ TRỢ</span>
+                      </div>
+                      <div class="price_item-btn">ĐĂNG KÍ NGAY</div>
+                    </div>
+                    <div class="price_item price_item-active c-4">
+                      <div class="price_item-popular">Phổ biến</div>
+                      <div class="price_item-title price_item-title-active">GÓI NÂNG CAO</div>
+                      <div class="price_item-money">
+                        <p class="price_item-dolor">$</p>
+                        <p class="price_item-1">13.</p>
+                        <p class="price_item-2">89.</p>
+                        <p class="price_item-month">/tháng</p>
+                      </div>
+                      <div class="price_item-info">
+                          <p>3</p>
+                          <span>NGƯỜI DÙNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>KHÔNG GIỚI HẠN</p>
+                        <span>BĂNG THÔNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>12/7</p>
+                        <span>HỖ TRỢ</span>
+                      </div>
+                      <div class="price_item-btn price_item-btn-active">MUA NGAY</div>
+                    </div>
+                    <div class="price_item  c-4">
+                      <div class="price_item-title">GÓI DOANH NGHIỆP</div>
+                      <div class="price_item-money">
+                        <p class="price_item-dolor">$</p>
+                        <p class="price_item-1">39.</p>
+                        <p class="price_item-2">89.</p>
+                        <p class="price_item-month">/tháng</p>
+                      </div>
+                      <div class="price_item-info">
+                          <p>8</p>
+                          <span>NGƯỜI DÙNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>KHÔNG GIỚI HẠN</p>
+                        <span>BĂNG THÔNG</span>
+                      </div>
+                      <div class="price_item-info">
+                        <p>24/7</p>
+                        <span>HỖ TRỢ</span>
+                      </div>
+                      <div class="price_item-btn">MUA NGAY</div>
+                    </div>
+                 </div>
+                 <img class="price-logo" src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679243180/Vector_ht54xj.svg"/>
+              </div>
+            </div>
+          </div>
+          <!-- FAP -->
+          <div id="faq" class="question">
+            <div class="question_wrapper grid wide">
+              <div class="question_body c-10">
+                  <div class="question-title">Faq...</div>
+                  <div class="question_lists">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </main>                     
+        <footer class="footer">
+          <div class="footer_wrapper grid wide">
+            <div class="footer_body row sm-gutter">
+              <div class="footer_btn">
+                <div class="footer_btn-text">Dùng thử ChatGPT ngay nào</div>
+                <div class="footer_btn-next"><i class="fa-solid fa-arrow sm-gutter-right-long"></i></div>
+                <div class="footer_btn-button">Đăng kí</div>
+              </div>
+              <div class="footer_left c-6">
+                <div class="footer-name">OpenAI-ChatGPT</div>
+                <div class="footer-logo">
+                  <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679243180/Vector_ht54xj.svg" class="footer-img" alt="logo_GPT">
+                </div>
+              </div>
+              <div class="footer_right c-6">
+                <div class="footer-contact">Liên hệ với chúng tôi</div>
+                <div class="footer_fb">
+                  <div class="footer_fb-item">
+                    <div class="footer_fb-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="footer_fb-name"><a target="_blank" href="https://www.facebook.com/hoholeuleu">Phan Nhật</a></div>
+                  </div>
+                  <div class="footer_fb-item">
+                    <div class="footer_fb-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="footer_fb-name"><a target="_blank" href="https://www.facebook.com/quynh232000/">Mr Quynh</a></div>
+                  </div>
+                  <div class="footer_fb-item">
+                    <div class="footer_fb-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="footer_fb-name">Quốc Bảo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <div class="footer_copyright">
+            © 2023 OpenAi - ChatGPT. Bản quyền thuộc về Team<a href="https://www.facebook.com/quynh232000/">The best</a>
+          </div>
+        </footer>
+      </div>
+      
+      <!-- modal -->
+      <div id="modal" class="modal">
+        <div class="modal_body">
+          <div id="close-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+          <div class="modal_contain">
+            <div class="modal_info">
+              <div class="modal_info-left">
+                <div class="modal_info-input">
+                  <select >
+                    <option class="select-choise" selected disabled value="0">Chọn gói...</option>
+                    <option value="1">Gói cơ bản</option>
+                    <option value="2">Gói nâng cao</option>
+                    <option value="3">Gói doanh nghiệp</option>
+                  </select>
+                </div>
+                <div class="modal_info-pay">
+                  <div class="modal_info-pay-img"><img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/Group_14.png" alt="papal"></div>
+                  <div class="modal_info-pay-img"><img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/Group_47.png" alt="master-card"></div>
+                  <div class="modal_info-pay-img"><img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679338445/visa.png" alt="visa"></div>
+                </div>
+              </div>
+              <div class="modal_info-right">
+                <!-- <div class="modal_right-title">Đăng kí</div> -->
+                <div class="modal_right-img">
+                  <img src="https://res.cloudinary.com/dhglwzgm3/image/upload/v1679392535/Vector_1_gteig3.svg"/>
+                </div>
+              </div>
+            </div>
+            <form class="modal_input" >
+              <div class="modal_input-body">
+                <label for="">Số điện thoại:</label>
+                <input class="input-phone" name="phone" type="number" placeholder="Nhập số điện thoại...">
+                <div class="buy-message message-phone "></div>
+              </div>
+              <div class="modal_input-body">
+                <label for="">Tên:</label>
+                <input class="input-name" name="name"  type="text" placeholder="Nhập tên...">
+                <div class="buy-message message-name"></div>
+              </div>
+              <div class="modal_input-body">
+                <label for="">Email:</label>
+                <input class="input-email" name="email"  type="email" placeholder="Nhập email...">
+                <div class="buy-message message-email"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal_btn">
+            <button id="btn-submit-form">Đăng kí</button>
+          </div>
+        </div>
+      </div>
+      <!-- modal ad -->
+      <div id="advertise" class="advertise">
+        <div class="ad_wrapper">
+          <div class="ad_top">
+            <div class="ad_title">Đăng kí ngay để nhận ưu đãi</div>
+            <div class="ad_title"><span>50% sale</span> ngay hôm nay!</div>
+          </div>
+          <div class="ad_input-body">
+            <div class="ad_input-wrapper">
+              <input type="text" class="input-name-ad" placeholder="Nhập tên của bạn...">
+              <div class="ad-message message-name-ad "></div>
+            </div>
+            <div class="ad_input-wrapper">
+              <input type="email" class="input-email-ad" placeholder="Nhập email của bạn...">
+              <div class="ad-message message-email-ad "></div>
+            </div>
+          </div>
+          <div class="ad_bottom">
+            <button id="ad_bottom-btn" class="ad_bottom-btn">Đăng kí</button>
+            <div class="ad_close">Không, cảm ơn!</div>
+          </div>
+        </div>
+      </div>
+      <!-- toast message -->
+      <div id="toast">
+        <div class="toast toast--success">
+          <div class="toast__icon">
+              <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="toast__body">
+              <div class="toast__title">Đăng kí thành công!</div>
+              <p class="toast__msg">Cảm ơn bạn đã đặt dịch vụ của chúng tôi. Chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất.</p>
+          </div>
+          <div class="toast__close">
+          </div>
+      </div>
+      </div>
+    </div>
+<!-- jQuery -->
+  <script type="text/javascript"src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript"src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/636909afdaff0e1306d626f5/1gh94rm5f';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+<!--End of Tawk.to Script-->
+  <script src="./src/js/main.js"></script>
+  
+</body>
+</html>

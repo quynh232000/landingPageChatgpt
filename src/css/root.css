@@ -1,0 +1,37 @@
+
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --bg-color:#28044A;
+    --bg-gradient-1:#012963;
+    --bg-gradient-2:#210e5d;
+    --bg-gradient-3:#227672;
+    --text-color:#00F0FF;
+
+    --width-default:1200px;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+/* custom scrollbar */
+body::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+body::-webkit-scrollbar-thumb {
+    background-color: var(--bg-gradient-1);
+    outline: 1px solid slategrey;
+}

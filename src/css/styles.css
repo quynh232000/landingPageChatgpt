@@ -1,0 +1,187 @@
+.root{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    background-image: linear-gradient(var(--bg-gradient-1),var(--bg-gradient-2),var(--bg-gradient-3));
+    /* background-image: url("https://media.istockphoto.com/id/1249267822/vi/vec-to/bi%E1%BB%83u-ng%E1%BB%AF-tr%E1%BB%ABu-t%C6%B0%E1%BB%A3ng-t%C6%B0%C6%A1ng-lai-v%E1%BB%9Bi-c%C3%A1c-v%C3%B2ng-n%C6%B0%E1%BB%9Bc-tr%E1%BB%ABu-t%C6%B0%E1%BB%A3ng-g%E1%BB%A3n-s%C3%B3ng-tr%C3%AAn-n%E1%BB%81n-m%C3%A0u-xanh-%C4%91%E1%BA%ADm.jpg?s=612x612&w=0&k=20&c=TY2h9dI5JnYX5ridsxUenFn-AXov7Ia5fM2G_HaxfS4=") ; */
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+}   
+.app{
+    width: 100%;
+}
+.header{
+    display: flex;
+    transition: all 0.1s ease;
+}
+.header-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.header-show{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background-color: var(--bg-gradient-1);
+    box-shadow: 0 3px 10px rgba(91, 97, 150, 0.2);
+    transition: all 0.1s ease;
+}
+.header_menu i{
+    font-size: 4rem;
+    display: none;
+    cursor: pointer;
+}
+.mobile{
+    display: none;
+}
+/* ///////////mobile */
+.header_m{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:-178px;
+    background-color: var(--bg-gradient-1);
+    box-shadow: 0 3px 6px rgba(91, 97, 150, 0.2);
+    transition: all 0.3s ease;
+    background-image: linear-gradient(var(--bg-gradient-1),var(--bg-gradient-2),var(--bg-gradient-3));
+    animation:slideTop ease .3s;
+}
+.header_m-active{
+    display: none;
+}
+
+
+@keyframes slideTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+.header_m-list{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.header_m-item{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    transition: all .5s ease;
+
+}
+.header_m-item:hover{
+    background-color: rgb(62, 81, 109);
+}
+
+.header_m-item a{
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 1.8rem;
+}
+/* nav */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.nav-items{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.nav-item{
+    position: relative;
+    cursor: pointer;
+    padding: 0 6px;
+}
+.nav-item a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.nav-item:hover::before{
+    transform: scaleX(1);
+    cursor: pointer;
+    transition: transform .5s ease,-webkit-transform .5s ease;
+}
+.nav-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: transform .5s ease,-webkit-transform .5s ease;
+    transform: scaleX(0);
+}
+/* btn */
+.nav-btn-body{
+    display: flex;
+    justify-content: center;
+}
+.nav-btn {
+    padding: 10px 24px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+    background-image: linear-gradient(#ECBC11,#E20E00);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(236, 232, 229, 0.3);
+    transform: translateX(-100%);
+    transition: all 0.3s ease-out;
+  }
+.nav-btn:hover {
+    color: white;
+    transform: scale(1.05) rotate(2deg);
+
+  }
+.nav-btn:hover::before {
+    transform: translateX(0%);
+  }
+/*  */
+.tawk-icon-right{
+    display: none !important;
+}
